@@ -1,0 +1,92 @@
+.weekName {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    color: #fafafa;
+    margin-bottom: 10px;
+}
+
+.weekData {
+    .dayName {
+        color: #aaaaaa;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 20px 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 5px;
+}
+
+.pair {
+    background-color: #4f4f4f;
+    border-radius: 5px;
+    &.active {
+        background: #456844;
+    }
+}
+.pairNumber {
+    color: #aaaaaa;
+    text-align: center;
+}
+
+.subject {
+    padding: 5px;
+
+    .subjectName {
+        display: -webkit-box;
+        max-width: 100%;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: #eeeeee;
+        border: 1px solid #666666;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    .lecturer {
+        display: -webkit-box;
+        max-width: 100%;
+        -webkit-line-clamp: 1;
+        color: #bbbbbb;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .links {
+        display: flex;
+    }
+    .link {
+        padding: 2px 5px;
+        a {
+            color: #fafa00;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    
+
+    &.lab {
+        .subjectName {
+            border-color: #BEA881;
+        }
+    }
+    &.lecture {
+        .subjectName {
+            border-color: #62A093;
+        }
+
+    }
+    &.practical {
+        .subjectName {
+            border-color: #406786;
+        }
+    }
+}
+
+.second {
+    margin-top: 50px;
+}
