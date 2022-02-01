@@ -214,7 +214,7 @@ const subjects = [
                 lecturer: "Бендюг Владислав Іванович",
                 links: [
                     { name: 'Telegram', link: 'https://t.me/+CN9T7bUdUAxkMjEy' },
-                    { name: '', link: 'https://www.xn--90aecd4bzg.xn--j1amh/sd/innosd' }
+                    { name: 'Site', link: 'https://www.xn--90aecd4bzg.xn--j1amh/sd/innosd' }
                 ],
                 isSelectable: false
             },
