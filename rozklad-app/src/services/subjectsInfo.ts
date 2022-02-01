@@ -149,6 +149,7 @@ const subjects = [
                 type: LessonType.Lecture,
                 lecturer: "Савенко Володимир Миколайович",
                 links: [
+                    { name: 'Google Meet', link: 'https://meet.google.com/gwr-xvyw-anf?hs=224' }
                 ],
                 isSelectable: true
             },
@@ -323,6 +324,7 @@ const subjects = [
                 type: LessonType.Lecture,
                 lecturer: "Савенко Володимир Миколайович",
                 links: [
+                    { name: 'Google Meet', link: 'https://meet.google.com/gwr-xvyw-anf?hs=224' }
                 ],
                 isSelectable: true
             },
