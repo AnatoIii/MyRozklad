@@ -25,21 +25,10 @@ const Subject: React.FC<IProps> = ({ subject }: IProps) => {
                 return styles.practical;
         }
     } 
-    const nameByType = (type: LessonType) => {
-        switch (type)
-        {
-            case LessonType.Lab:
-                return 'Lab';
-            case LessonType.Lecture:
-                return 'Lec';
-            case LessonType.Practical:
-                return 'Prac';
-        }
-    } 
     
     return (
         <div className={`${styles.subject} ${classByType(subject.type)}`} key={subject.name}>
-            <div className={styles.subjectName}>{nameByType(subject.type)} - {subject.viewName}</div>
+            <div className={styles.subjectName}>{subject.viewName}</div>
             <div className={styles.lecturer}>{subject.lecturer}</div>
             <div className={styles.links}>
                 {subject.links?.map(el => (

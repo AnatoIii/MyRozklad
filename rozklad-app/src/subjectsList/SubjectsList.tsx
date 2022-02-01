@@ -97,7 +97,7 @@ const SubjectsList: React.FC = () => {
                 <div className={styles.weekName}>Week 2</div>
                 <div className={styles.weekData}>
                     <div></div>
-                    {days.map(el => <div className={styles.dayName}>{el.toString()}</div>)}
+                    {days.map(el => <div className={styles.dayName} key={el}>{el.toString()}</div>)}
                     {pairs.map(pair => { // Line
                         const pairsList = schedule.filter(el => (el.week === Weeks.Second || el.week === Weeks.Both) && el.pair === pair);
 
@@ -108,7 +108,7 @@ const SubjectsList: React.FC = () => {
                                     const scheduleInPair = pairsList.filter(el => el.day === day);
 
                                     return (
-                                        <div className={`${styles.pair} ${nearestActive(day, pair, Weeks.Second) ? styles.active : null}`}>
+                                        <div className={`${styles.pair} ${nearestActive(day, pair, Weeks.Second) ? styles.active : null}`} key={day}>
                                             {scheduleInPair.map(sip => { // Pair object
                                                 const subjectInPair = userSubjects.find(el => el.name === sip.name);
 

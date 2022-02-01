@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { UserDataService } from '../services/userDataService';
 import styles from './styles.module.scss';
-import subjects, { ISubject } from '../services/subjectsInfo';
+import subjects, { ISubject, LessonType } from '../services/subjectsInfo';
 
 const SelectableSubjects: React.FC = () => {
 
@@ -25,6 +25,17 @@ const SelectableSubjects: React.FC = () => {
         selectedSubjects = subjects;
         setChecked(checkboxes.map((el, i) => index === i ? !el : el));
     }
+    const nameByType = (type: LessonType) => {
+        switch (type)
+        {
+            case LessonType.Lab:
+                return 'Lab';
+            case LessonType.Lecture:
+                return 'Lec';
+            case LessonType.Practical:
+                return 'Prac';
+        }
+    } 
 
     return (
         <div className={styles.subjects}>
@@ -33,7 +44,7 @@ const SelectableSubjects: React.FC = () => {
                 {selectableSubjects.map((el, index) => (
                     <div className={styles.checkbox} key={el.name} onClick={selectItem(el.name, index)}>
                         <input type="checkbox" checked={checkboxes[index]} onChange={selectItem(el.name, index)} />
-                        {el.viewName}
+                        {nameByType(el.type)} - {el.viewName}
                     </div>
                 ))}
             </div>
