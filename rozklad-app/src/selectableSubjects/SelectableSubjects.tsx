@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { UserDataService } from '../services/userDataService';
 import styles from './styles.module.scss';
-import subjects, { ISubject, LessonType } from '../services/subjectsInfo';
+import subjects from '../services/subjectsData';
 
 const SelectableSubjects: React.FC = () => {
 
     const userDataService = new UserDataService();
-    const group: string = userDataService.getGroup().value || "IC11mn";
-    const selectableSubjects: ISubject[] = (subjects.find(el => el.name === group)?.list || []).filter((el: ISubject) => el.isSelectable).sort(function(a, b) { return a.viewName > b.viewName ? -1 : 1 });
+    const selectableSubjects = subjects.filter(el => el.isSelectable).sort(function(a, b) { return a.viewName > b.viewName ? -1 : 1 });
     let selectedSubjects: string[] = userDataService.getSubjects() ?? [];
     
     const [checkboxes, setChecked] = useState(
@@ -25,17 +24,6 @@ const SelectableSubjects: React.FC = () => {
         selectedSubjects = subjects;
         setChecked(checkboxes.map((el, i) => index === i ? !el : el));
     }
-    const nameByType = (type: LessonType) => {
-        switch (type)
-        {
-            case LessonType.Lab:
-                return 'Lab';
-            case LessonType.Lecture:
-                return 'Lec';
-            case LessonType.Practical:
-                return 'Prac';
-        }
-    } 
 
     return (
         <div className={styles.subjects}>
@@ -44,7 +32,7 @@ const SelectableSubjects: React.FC = () => {
                 {selectableSubjects.map((el, index) => (
                     <div className={styles.checkbox} key={el.name} onClick={selectItem(el.name, index)}>
                         <input type="checkbox" checked={checkboxes[index]} onChange={selectItem(el.name, index)} />
-                        {nameByType(el.type)} - {el.viewName}
+                        {el.viewName}
                     </div>
                 ))}
             </div>

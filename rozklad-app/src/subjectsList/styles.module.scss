@@ -60,11 +60,14 @@
     .link {
         padding: 2px 5px;
         a {
-            color: #fafa00;
+            color: #dada57;
 
             &:hover {
                 text-decoration: none;
             }
+        }
+        .textlink {
+            color: #84ca6e;
         }
     }
     

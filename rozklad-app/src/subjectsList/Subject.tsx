@@ -6,11 +6,13 @@ import Select from 'react-select';
 import subjects, { ISubject, LessonType } from '../services/subjectsInfo';
 
 interface IProps {
-    subject: ISubject | undefined;
+    subjectInfo: ISubject | undefined;
+    subjectData: any;
+    type: LessonType;
 }
 
-const Subject: React.FC<IProps> = ({ subject }: IProps) => {
-    if (subject === undefined) {
+const Subject: React.FC<IProps> = ({ subjectData, subjectInfo, type }: IProps) => {
+    if (subjectData === undefined || subjectInfo === undefined) {
         return null;
     }
 
@@ -25,14 +27,26 @@ const Subject: React.FC<IProps> = ({ subject }: IProps) => {
                 return styles.practical;
         }
     } 
+
+    const isEmail = (name: string) => {
+        return name.toLowerCase().replaceAll(/-/g, '') === 'email';
+    }
     
     return (
-        <div className={`${styles.subject} ${classByType(subject.type)}`} key={subject.name}>
-            <div className={styles.subjectName}>{subject.viewName}</div>
-            <div className={styles.lecturer}>{subject.lecturer}</div>
+        <div className={`${styles.subject} ${classByType(type)}`} key={subjectInfo.name}>
+            <div className={styles.subjectName}>{subjectData.viewName}</div>
+            <div className={styles.lecturer}>{subjectInfo.lecturer}</div>
             <div className={styles.links}>
-                {subject.links?.map(el => (
-                    <div className={styles.link} key={el.name}><a href={el.link}>{el.name}</a></div>
+                {subjectInfo.links?.map(el => (
+                    <div className={styles.link} key={el.name}>
+                        {isEmail(el.name)
+                            ? (
+                                <span className={styles.textlink}>{el.link}</span>
+                            )
+                            : (
+                                <a href={el.link}>{el.name}</a>
+                            )}
+                        </div>
                 ))}
             </div>
         </div>

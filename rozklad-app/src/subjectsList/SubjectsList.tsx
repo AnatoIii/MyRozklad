@@ -3,18 +3,25 @@ import { SingleValue } from 'react-select';
 import { UserDataService } from '../services/userDataService';
 import styles from './styles.module.scss';
 import Select from 'react-select';
-import subjects, { ISubject } from '../services/subjectsInfo';
+import subjectInfos, { ISubject, LessonType } from '../services/subjectsInfo';
 import subjectSchedule, { Days, Weeks } from '../services/rozklad';
 import Subject from './Subject';
 import moment from 'moment';
+import subjects from '../services/subjectsData';
 
 const SubjectsList: React.FC = () => {
     const dataService = new UserDataService();
     const group = dataService.getGroup();
     const selectableItems = dataService.getSubjects();
 
-    const groupSubjects = subjects.find(el => el.name === group.value)?.list || []; 
-    const userSubjects = groupSubjects.filter(el => !el.isSelectable || selectableItems.includes(el.name));
+    const groupSubjects = subjectInfos.find(el => el.name === group.value)?.list || []; 
+    const subjectsData = subjects;
+
+    const isSelectable = (name: string) => {
+        return subjectsData.findIndex(el => el.name === name && el.isSelectable) !== -1;
+    }
+
+    const userSubjects = groupSubjects.filter(el => !isSelectable(el.name) || selectableItems.includes(el.name));
     const schedule = subjectSchedule.find(el => el.groupName === group.value)?.pairs || [];
 
     const days = [Days.Monday, Days.Tuesday, Days.Wednesday, Days.Thursday, Days.Friday];
@@ -60,6 +67,35 @@ const SubjectsList: React.FC = () => {
         return false;
     }
 
+    const renderDayInfo = (pair: number, week: Weeks) => {
+        const pairsList = schedule.filter(el => (el.week === week || el.week === Weeks.Both) && el.pair === pair);
+
+        return (
+            <>
+                <div className={styles.pairNumber}>{pair}</div>
+                {days.map(day => { // Pair
+                    const scheduleInPair = pairsList.filter(el => el.day === day);
+
+                    return (
+                        <div className={`${styles.pair} ${nearestActive(day, pair, Weeks.First) ? styles.active : null}`}>
+                            {scheduleInPair.map(sip => { // Pair object
+                                const subjectInPair = userSubjects.find(el => el.name === sip.name && (el.type === sip.type || el.type === LessonType.All));
+                                const subjectData = subjectsData.find(el => el.name === sip.name);
+
+                                return (
+                                    <Subject 
+                                        subjectInfo={subjectInPair} 
+                                        subjectData={subjectData}  
+                                        type={sip.type} />
+                                )
+                            })}
+                        </div>
+                    )
+                })}
+            </>
+        )
+    }
+
     return (
         <div className={styles.scheduleBlock}>
             <div className={styles.first}>
@@ -67,30 +103,7 @@ const SubjectsList: React.FC = () => {
                 <div className={styles.weekData}>
                     <div></div>
                     {days.map(el => <div className={styles.dayName}>{el.toString()}</div>)}
-                    {pairs.map(pair => { // Line
-                        const pairsList = schedule.filter(el => (el.week === Weeks.First || el.week === Weeks.Both) && el.pair === pair);
-
-                        return (
-                            <>
-                                <div className={styles.pairNumber}>{pair}</div>
-                                {days.map(day => { // Pair
-                                    const scheduleInPair = pairsList.filter(el => el.day === day);
-
-                                    return (
-                                        <div className={`${styles.pair} ${nearestActive(day, pair, Weeks.First) ? styles.active : null}`}>
-                                            {scheduleInPair.map(sip => { // Pair object
-                                                const subjectInPair = userSubjects.find(el => el.name === sip.name);
-
-                                                return (
-                                                    <Subject subject={subjectInPair} />
-                                                )
-                                            })}
-                                        </div>
-                                    )
-                                })}
-                            </>
-                        )}
-                    )}
+                    {pairs.map(pair => renderDayInfo(pair, Weeks.First))}
                 </div>
             </div>
             <div className={styles.second}>
@@ -98,7 +111,8 @@ const SubjectsList: React.FC = () => {
                 <div className={styles.weekData}>
                     <div></div>
                     {days.map(el => <div className={styles.dayName} key={el}>{el.toString()}</div>)}
-                    {pairs.map(pair => { // Line
+                    {pairs.map(pair => renderDayInfo(pair, Weeks.Second))}
+                    {/* {pairs.map(pair => { // Line
                         const pairsList = schedule.filter(el => (el.week === Weeks.Second || el.week === Weeks.Both) && el.pair === pair);
 
                         return (
@@ -111,9 +125,13 @@ const SubjectsList: React.FC = () => {
                                         <div className={`${styles.pair} ${nearestActive(day, pair, Weeks.Second) ? styles.active : null}`} key={day}>
                                             {scheduleInPair.map(sip => { // Pair object
                                                 const subjectInPair = userSubjects.find(el => el.name === sip.name);
+                                                const subjectData = subjectsData.find(el => el.name === sip.name);
 
                                                 return (
-                                                    <Subject subject={subjectInPair} />
+                                                    <Subject 
+                                                        subjectInfo={subjectInPair} 
+                                                        subjectData={subjectData}  
+                                                        type={sip.type} />
                                                 )
                                             })}
                                         </div>
@@ -121,7 +139,7 @@ const SubjectsList: React.FC = () => {
                                 })}
                             </>
                         )}
-                    )}
+                    )} */}
                 </div>
             </div>
         </div>

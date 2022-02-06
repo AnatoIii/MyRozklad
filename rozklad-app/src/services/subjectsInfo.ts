@@ -1,184 +1,118 @@
 export enum LessonType {
     Lecture,
     Practical,
+    All,
     Lab
 }
 
 export interface ISubject 
 {
     name: string;
-    viewName: string;
     lecturer: string;
-    isSelectable: boolean;
     type: LessonType;
     links?: { name: string; link: string; }[]
 }
 
-const subjects = [
+const subjectInfos = [
     {
         name: "IC11mn",
         list: [
             {
-                name: "PAT-L",
-                viewName: "Інтелектуальна власність та патентознавство-2. Патентознавство та набуття прав",
+                name: "IVP2-IC",
                 type: LessonType.Lecture,
                 lecturer: "Ромашко Алла Сазонівна",
                 links: [
                     { name: 'Classroom', link: 'https://classroom.google.com/u/1/c/NDQ5MTY0NDM1NDcw' },
                     { name: 'Google', link: 'http://meet.google.com/szf-dfno-ajt' }
                 ],
-                isSelectable: false
             },
             {
-                name: "SIR-L",
-                viewName: "Сталий іноваційний розвиток",
-                type: LessonType.Lecture,
-                lecturer: "Джигирей Ірина Миколаївна",
-                links: [
-                ],
-                isSelectable: false
-            },
-            {
-                name: "ENG",
-                viewName: "Практичний курс іншомовного наукового спілкування-1. Практичний курс іноземної мови для наукового спілкування І",
-                type: LessonType.Practical,
-                lecturer: "Шевченко Ольга Миколаївна",
-                links: [
-                ],
-                isSelectable: false
-            },
-            {
-                name: "SMW",
-                viewName: "Наукова робота за темою магістерської дисертації-2. Науково-дослідна робота за темою магістерської дисертації",
-                type: LessonType.Practical,
-                lecturer: "Коган Алла Вікторівна",
-                links: [
-                ],
-                isSelectable: false
-            },
-            {
-                name: "PAT-P",
-                viewName: "Інтелектуальна власність та патентознавство-2. Патентознавство та набуття прав",
+                name: "IVP2-IC",
                 type: LessonType.Practical,
                 lecturer: "Гаврушкевич Наталія Валеріївна",
                 links: [
                     { name: 'Telegram', link: 'https://t.me/+i0J6URn4Tuw2NWQy' },
                 ],
-                isSelectable: false
             },
             {
-                name: "SIR-P-IS",
-                viewName: "Сталий іноваційний розвиток",
-                type: LessonType.Practical,
+                name: "IVP1-IC",
+                type: LessonType.All,
+                lecturer: "Гордієнко Сергій Георгійович",
+                links: [
+                ],
+            },
+            {
+                name: "SIR-IC",
+                type: LessonType.All,
                 lecturer: "Джигирей Ірина Миколаївна",
                 links: [
                 ],
-                isSelectable: false
             },
             {
-                name: "MMOS-L",
-                viewName: "Сучасні мобільні операційні системи",
-                type: LessonType.Lecture,
+                name: "ENG-IC",
+                type: LessonType.All,
+                lecturer: "Шевченко Ольга Миколаївна",
+                links: [
+                ],
+            },
+            {
+                name: "NRMD-IC",
+                type: LessonType.Practical,
+                lecturer: "Коган Алла Вікторівна",
+                links: [
+                ],
+            },
+            {
+                name: "SMOS",
+                type: LessonType.All,
                 lecturer: "Корнієнко Б. Я.",
                 links: [
                     { name: 'Telegram', link: 'https://t.me/+RNTV09xpZXFlmL-L' },
                     { name: 'Zoom', link: 'https://us02web.zoom.us/j/2539419529?pwd=cUxoSkhNdEpYbzhzRkRjZWs4MU1nZz09' }
                 ],
-                isSelectable: true
             },
             {
-                name: "MMOS-P",
-                viewName: "Сучасні мобільні операційні системи",
-                type: LessonType.Lab,
-                lecturer: "Корнієнко Б. Я.",
-                links: [
-                    { name: 'Telegram', link: 'https://t.me/+RNTV09xpZXFlmL-L' },
-                    { name: 'Zoom', link: 'https://us02web.zoom.us/j/2539419529?pwd=cUxoSkhNdEpYbzhzRkRjZWs4MU1nZz09' }
-                ],
-                isSelectable: true
-            },
-            {
-                name: "DB-L",
-                viewName: "Проектування інформаційно-комунікаційних систем з розподіленими та нереляційними базами даних",
-                type: LessonType.Lecture,
+                name: "NRDB",
+                type: LessonType.All,
                 lecturer: "Ульяницька Ксенія Олександрівна",
                 links: [
                     { name: 'Telegram', link: 'https://t.me/+WQe3dYsx6LQziDN2' },
                     { name: 'Disk', link: 'https://drive.google.com/drive/folders/1evphvZeEoNp7zH7OInY4CMf3Gci41liVfkSjvtmcPNo9aoLAhvtWc5SkV0tWQK3FGji8pvdG' },
                     { name: 'Classroom', link: 'https://classroom.google.com/c/NDIxMjM0OTc5ODY4?cjc=pymdonb' }
                 ],
-                isSelectable: true
             },
             {
-                name: "DB-P",
-                viewName: "Проектування інформаційно-комунікаційних систем з розподіленими та нереляційними базами даних",
-                type: LessonType.Lab,
-                lecturer: "Ульяницька Ксенія Олександрівна",
-                links: [
-                    { name: 'Telegram', link: 'https://t.me/+WQe3dYsx6LQziDN2' },
-                    { name: 'Disk', link: 'https://drive.google.com/drive/folders/1evphvZeEoNp7zH7OInY4CMf3Gci41liVfkSjvtmcPNo9aoLAhvtWc5SkV0tWQK3FGji8pvdG' },
-                    { name: 'Classroom', link: 'https://classroom.google.com/c/NDIxMjM0OTc5ODY4?cjc=pymdonb' }
-                ],
-                isSelectable: true
-            },
-            {
-                name: "HSA-L",
-                viewName: "Developing a highload software architecture (авторський курс від компанії Genesis)",
+                name: "HSA",
                 type: LessonType.Lecture,
                 lecturer: "",
                 links: [
                     { name: 'Telegram', link: 'https://t.me/+pS0JOhWcWFtlMzY6' },
                     { name: 'e-mail', link: 'education@gen.tech' }
                 ],
-                isSelectable: true
             },
             {
-                name: "HSA-P",
-                viewName: "Developing a highload software architecture (авторський курс від компанії Genesis)",
+                name: "HSA",
                 type: LessonType.Lab,
                 lecturer: "",
                 links: [
                     { name: 'Telegram', link: 'https://t.me/+pS0JOhWcWFtlMzY6' },
                     { name: 'e-mail', link: 'education@gen.tech' }
                 ],
-                isSelectable: true
             },
             {
-                name: "BPM-L",
-                viewName: "Управління бізнес процесами",
-                type: LessonType.Lecture,
+                name: "UBP",
+                type: LessonType.All,
                 lecturer: "Савенко Володимир Миколайович",
                 links: [
                     { name: 'Google Meet', link: 'https://meet.google.com/gwr-xvyw-anf?hs=224' }
                 ],
-                isSelectable: true
             },
             {
-                name: "BPM-P",
-                viewName: "Управління бізнес процесами",
-                type: LessonType.Lab,
-                lecturer: "Савенко Володимир Миколайович",
-                links: [
-                ],
-                isSelectable: true
-            },
-            {
-                name: "KATIN-L",
-                viewName: "Технології та методика програмування вбудованих систем",
-                type: LessonType.Lecture,
+                name: "PVS",
+                type: LessonType.All,
                 lecturer: "Катін Павло Юрійович",
                 links: [
                 ],
-                isSelectable: true
-            },
-            {
-                name: "KATIN-P",
-                viewName: "Технології та методика програмування вбудованих систем",
-                type: LessonType.Lab,
-                lecturer: "Катін Павло Юрійович",
-                links: [
-                ],
-                isSelectable: true
             }
         ]
     },
@@ -186,18 +120,16 @@ const subjects = [
         name: "IA11mn",
         list: [
             {
-                name: "PAT-L",
-                viewName: "Інтелектуальна власність та патентознавство-2. Патентознавство та набуття прав",
+                name: "IVP2-IA",
                 type: LessonType.Lecture,
                 lecturer: "Ромашко Алла Сазонівна",
                 links: [
                     { name: 'Classroom', link: 'https://classroom.google.com/u/1/c/NDQ5MTY0NDM1NDcw' },
                     { name: 'Google', link: 'http://meet.google.com/szf-dfno-ajt' }
                 ],
-                isSelectable: false
             },
             {
-                name: "PAT-P",
+                name: "IVP2-IA",
                 viewName: "Інтелектуальна власність та патентознавство-2. Патентознавство та набуття прав",
                 type: LessonType.Practical,
                 lecturer: "Гаврушкевич Наталія Валеріївна",
@@ -205,33 +137,19 @@ const subjects = [
                     { name: 'Classroom', link: 'https://classroom.google.com/u/1/c/NDQ5MTY0NDM1NDcw' },
                     { name: 'Telegram', link: 'https://t.me/+i0J6URn4Tuw2NWQy' }
                 ],
-                isSelectable: false
             },
             {
-                name: "SIR-L",
+                name: "SIR-IA",
                 viewName: "Сталий іноваційний розвиток",
-                type: LessonType.Lecture,
+                type: LessonType.All,
                 lecturer: "Бендюг Владислав Іванович",
                 links: [
                     { name: 'Telegram', link: 'https://t.me/+CN9T7bUdUAxkMjEy' },
                     { name: 'Site', link: 'https://www.xn--90aecd4bzg.xn--j1amh/sd/innosd' }
                 ],
-                isSelectable: false
             },
             {
-                name: "SIR-P",
-                viewName: "Сталий іноваційний розвиток",
-                type: LessonType.Practical,
-                lecturer: "Бендюг Владислав Іванович",
-                links: [
-                    { name: 'Telegram', link: 'https://t.me/+CN9T7bUdUAxkMjEy' },
-                    { name: 'Site', link: 'https://www.xn--90aecd4bzg.xn--j1amh/sd/innosd' }
-                ],
-                isSelectable: false
-            },
-            {
-                name: "ENG",
-                viewName: "Практичний курс іншомовного наукового спілкування-1. Практиктичний курс іноземної мови для наукового спілкування І",
+                name: "ENG-IA",
                 type: LessonType.Practical,
                 lecturer: "Колісник Марина Павлівна",
                 links: [
@@ -239,42 +157,25 @@ const subjects = [
                     { name: 'Telegram', link: 'https://web.telegram.org/z/#-1549971772' },
                     { name: 'Classroom', link: 'https://classroom.google.com/u/1/c/Mzg3MDQ4NTgzMjAw' }
                 ],
-                isSelectable: false
             },
             {
-                name: "SMW",
-                viewName: "Наукова робота за темою магістерської дисертації-2. Науково-дослідна робота за темою магістерської дисертації",
+                name: "NRMD-IA",
                 type: LessonType.Practical,
                 lecturer: "Дорошенко Анатолій Юхимович",
                 links: [
                 ],
-                isSelectable: false
             },
             {
-                name: "MMOS-L",
-                viewName: "Сучасні мобільні операційні системи",
+                name: "SMOS",
                 type: LessonType.Lecture,
                 lecturer: "Корнієнко Б. Я.",
                 links: [
                     { name: 'Telegram', link: 'https://t.me/+RNTV09xpZXFlmL-L' },
                     { name: 'Zoom', link: 'https://us02web.zoom.us/j/2539419529?pwd=cUxoSkhNdEpYbzhzRkRjZWs4MU1nZz09' }
                 ],
-                isSelectable: true
             },
             {
-                name: "MMOS-P",
-                viewName: "Сучасні мобільні операційні системи",
-                type: LessonType.Lab,
-                lecturer: "Корнієнко Б. Я.",
-                links: [
-                    { name: 'Telegram', link: 'https://t.me/+RNTV09xpZXFlmL-L' },
-                    { name: 'Zoom', link: 'https://us02web.zoom.us/j/2539419529?pwd=cUxoSkhNdEpYbzhzRkRjZWs4MU1nZz09' }
-                ],
-                isSelectable: true
-            },
-            {
-                name: "DB-L",
-                viewName: "Проектування інформаційно-комунікаційних систем з розподіленими та нереляційними базами даних",
+                name: "NRDB",
                 type: LessonType.Lecture,
                 lecturer: "Ульяницька Ксенія Олександрівна",
                 links: [
@@ -282,81 +183,42 @@ const subjects = [
                     { name: 'Disk', link: 'https://drive.google.com/drive/folders/1evphvZeEoNp7zH7OInY4CMf3Gci41liVfkSjvtmcPNo9aoLAhvtWc5SkV0tWQK3FGji8pvdG' },
                     { name: 'Classroom', link: 'https://classroom.google.com/c/NDIxMjM0OTc5ODY4?cjc=pymdonb' }
                 ],
-                isSelectable: true
             },
             {
-                name: "DB-P",
-                viewName: "Проектування інформаційно-комунікаційних систем з розподіленими та нереляційними базами даних",
-                type: LessonType.Lab,
-                lecturer: "Ульяницька Ксенія Олександрівна",
-                links: [
-                    { name: 'Telegram', link: 'https://t.me/+WQe3dYsx6LQziDN2' },
-                    { name: 'Disk', link: 'https://drive.google.com/drive/folders/1evphvZeEoNp7zH7OInY4CMf3Gci41liVfkSjvtmcPNo9aoLAhvtWc5SkV0tWQK3FGji8pvdG' },
-                    { name: 'Classroom', link: 'https://classroom.google.com/c/NDIxMjM0OTc5ODY4?cjc=pymdonb' }
-                ],
-                isSelectable: true
-            },
-            {
-                name: "HSA-L",
-                viewName: "Developing a highload software architecture (авторський курс від компанії Genesis)",
+                name: "HSA",
                 type: LessonType.Lecture,
                 lecturer: "",
                 links: [
                     { name: 'Telegram', link: 'https://t.me/+pS0JOhWcWFtlMzY6' },
                     { name: 'e-mail', link: 'education@gen.tech' }
                 ],
-                isSelectable: true
             },
             {
-                name: "HSA-P",
-                viewName: "Developing a highload software architecture (авторський курс від компанії Genesis)",
+                name: "HSA",
                 type: LessonType.Lab,
                 lecturer: "",
                 links: [
                     { name: 'Telegram', link: 'https://t.me/+pS0JOhWcWFtlMzY6' },
                     { name: 'e-mail', link: 'education@gen.tech' }
                 ],
-                isSelectable: true
             },
             {
-                name: "BPM-L",
-                viewName: "Управління бізнес процесами",
-                type: LessonType.Lecture,
+                name: "UBP",
+                type: LessonType.All,
                 lecturer: "Савенко Володимир Миколайович",
                 links: [
                     { name: 'Google Meet', link: 'https://meet.google.com/gwr-xvyw-anf?hs=224' }
                 ],
-                isSelectable: true
             },
             {
-                name: "BPM-P",
-                viewName: "Управління бізнес процесами",
-                type: LessonType.Lab,
-                lecturer: "Савенко Володимир Миколайович",
-                links: [
-                ],
-                isSelectable: true
-            },
-            {
-                name: "KATIN-L",
-                viewName: "Технології та методика програмування вбудованих систем",
-                type: LessonType.Lecture,
+                name: "PVS",
+                type: LessonType.All,
                 lecturer: "Катін Павло Юрійович",
                 links: [
                 ],
-                isSelectable: true
-            },
-            {
-                name: "KATIN-P",
-                viewName: "Технології та методика програмування вбудованих систем",
-                type: LessonType.Lab,
-                lecturer: "Катін Павло Юрійович",
-                links: [
-                ],
-                isSelectable: true
             }
         ]
     }
 ]
 
-export default subjects;
+export default subjectInfos;

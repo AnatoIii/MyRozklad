@@ -1,3 +1,5 @@
+import { LessonType } from "./subjectsInfo";
+
 export enum Weeks {
     Both,
     First,
@@ -17,91 +19,127 @@ const subjectSchedule = [
         groupName: "IC11mn",
         pairs: [
             {
-                name: "PAT-L",
+                name: "IVP2-IC",
+                type: LessonType.Lecture,
                 week: Weeks.Both,
                 day: Days.Monday,
                 pair: 3
             },
             {
-                name: "SIR-L",
+                name: "IVP1-IC",
+                type: LessonType.Lecture,
+                week: Weeks.Second,
+                day: Days.Monday,
+                pair: 4
+            },
+            {
+                name: "IVP1-IC",
+                type: LessonType.Practical,
+                week: Weeks.Second,
+                day: Days.Friday,
+                pair: 1
+            },
+            {
+                name: "SIR-IC",
+                type: LessonType.Lecture,
                 week: Weeks.First,
                 day: Days.Monday,
                 pair: 4
             },
             {
-                name: "ENG",
+                name: "ENG-IC",
+                type: LessonType.Practical,
                 week: Weeks.Both,
                 day: Days.Thursday,
                 pair: 6
             },
             {
-                name: "SMW",
+                name: "NRMD-IC",
+                type: LessonType.Practical,
                 week: Weeks.First,
                 day: Days.Friday,
                 pair: 2
             },
             {
-                name: "PAT-P",
+                name: "IVP2-IC",
+                type: LessonType.Practical,
                 week: Weeks.First,
                 day: Days.Friday,
                 pair: 1
             },
             {
-                name: "SIR-P",
+                name: "SIR-IC",
+                type: LessonType.Practical,
                 week: Weeks.Second,
                 day: Days.Monday,
                 pair: 5
             },
             {
-                name: "MMOS-L",
+                name: "SMOS",
+                type: LessonType.Lecture,
                 week: Weeks.Both,
                 day: Days.Friday,
                 pair: 5
             },
             {
-                name: "DB-L",
+                name: "SMOS",
+                type: LessonType.Lab,
+                week: Weeks.First,
+                day: Days.Friday,
+                pair: 6
+            },
+            {
+                name: "NRDB",
+                type: LessonType.Lecture,
                 week: Weeks.Both,
                 day: Days.Tuesday,
                 pair: 1
             },
             {
-                name: "DB-P",
+                name: "NRDB",
+                type: LessonType.Lab,
                 week: Weeks.Second,
                 day: Days.Thursday,
                 pair: 1
             },
             {
-                name: "HSA-L",
+                name: "HSA",
+                type: LessonType.Lecture,
                 week: Weeks.Both,
                 day: Days.Thursday,
                 pair: 3
             },
             {
-                name: "DB-P",
+                name: "HSA",
+                type: LessonType.Lab,
                 week: Weeks.First,
                 day: Days.Thursday,
                 pair: 5
             },
             {
-                name: "BPM-L",
+                name: "UBP",
+                type: LessonType.Lecture,
                 week: Weeks.Both,
                 day: Days.Friday,
                 pair: 4
             },
             {
-                name: "BPM-P",
+                name: "UBP",
+                type: LessonType.Practical,
                 week: Weeks.Second,
                 day: Days.Tuesday,
                 pair: 6
             },
             {
-                name: "KATIN-L",
+                name: "PVS",
+                type: LessonType.Lecture,
                 week: Weeks.Both,
                 day: Days.Thursday,
                 pair: 2
             },
             {
-                name: "KATIN-P",
+                name: "PVS",
+                type: LessonType.Practical,
                 week: Weeks.First,
                 day: Days.Thursday,
                 pair: 4
@@ -112,91 +150,114 @@ const subjectSchedule = [
         groupName: "IA11mn",
         pairs: [
             {
-                name: "PAT-L",
+                name: "IVP2-IA",
+                type: LessonType.Lecture,
                 week: Weeks.Both,
                 day: Days.Monday,
                 pair: 3
             },
             {
-                name: "SIR-L",
+                name: "SIR-IA",
+                type: LessonType.Lecture,
                 week: Weeks.First,
                 day: Days.Monday,
                 pair: 4
             },
             {
-                name: "ENG",
+                name: "ENG-IA",
+                type: LessonType.Lecture,
                 week: Weeks.Both,
                 day: Days.Monday,
                 pair: 5
             },
             {
-                name: "SMW",
+                name: "NRMD-IA",
+                type: LessonType.Lecture,
                 week: Weeks.First,
                 day: Days.Friday,
                 pair: 1
             },
             {
-                name: "PAT-P",
+                name: "IVP2-IA",
+                type: LessonType.Lecture,
                 week: Weeks.Second,
                 day: Days.Friday,
                 pair: 1
             },
             {
-                name: "SIR-P",
+                name: "SIR-IA",
+                type: LessonType.Lecture,
                 week: Weeks.Second,
                 day: Days.Friday,
                 pair: 2
             },
+            // Selectable
             {
-                name: "MMOS-L",
+                name: "SMOS",
+                type: LessonType.Lecture,
                 week: Weeks.Both,
                 day: Days.Friday,
                 pair: 5
             },
             {
-                name: "DB-L",
+                name: "SMOS",
+                type: LessonType.Lab,
+                week: Weeks.First,
+                day: Days.Friday,
+                pair: 6
+            },
+            {
+                name: "NRDB",
+                type: LessonType.Lecture,
                 week: Weeks.Both,
                 day: Days.Tuesday,
                 pair: 1
             },
             {
-                name: "DB-P",
+                name: "NRDB",
+                type: LessonType.Lab,
                 week: Weeks.Second,
                 day: Days.Thursday,
                 pair: 1
             },
             {
-                name: "HSA-L",
+                name: "HSA",
+                type: LessonType.Lecture,
                 week: Weeks.Both,
                 day: Days.Thursday,
                 pair: 3
             },
             {
-                name: "DB-P",
+                name: "HSA",
+                type: LessonType.Lab,
                 week: Weeks.First,
                 day: Days.Thursday,
                 pair: 5
             },
             {
-                name: "BPM-L",
+                name: "UBP",
+                type: LessonType.Lecture,
                 week: Weeks.Both,
                 day: Days.Friday,
                 pair: 4
             },
             {
-                name: "BPM-P",
+                name: "UBP",
+                type: LessonType.Practical,
                 week: Weeks.Second,
                 day: Days.Tuesday,
                 pair: 6
             },
             {
-                name: "KATIN-L",
+                name: "PVS",
+                type: LessonType.Lecture,
                 week: Weeks.Both,
                 day: Days.Thursday,
                 pair: 2
             },
             {
-                name: "KATIN-P",
+                name: "PVS",
+                type: LessonType.Practical,
                 week: Weeks.First,
                 day: Days.Thursday,
                 pair: 4
