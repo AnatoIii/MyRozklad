@@ -104,7 +104,8 @@ const subjectInfos = [
                 type: LessonType.All,
                 lecturer: "Савенко Володимир Миколайович",
                 links: [
-                    { name: 'Google Meet', link: 'https://meet.google.com/gwr-xvyw-anf?hs=224' }
+                    { name: 'Google Meet', link: 'https://meet.google.com/gwr-xvyw-anf?hs=224' },
+                    { name: 'Google Drive', link: 'https://drive.google.com/drive/folders/1zOMbOazxT5W0CZirSjglFy0V76AWAb9Q' }
                 ],
             },
             {
@@ -112,6 +113,8 @@ const subjectInfos = [
                 type: LessonType.All,
                 lecturer: "Катін Павло Юрійович",
                 links: [
+                    { name: 'Zoom', link: 'https://us04web.zoom.us/j/7477652542?pwd=RTloNGpTbEg2eFVpbVo4Z2Yxd2x5Zz09' },
+                    { name: 'Telegram', link: 'https://t.me/+LOqk3_KQV51jNTI6' }
                 ],
             }
         ]
@@ -120,17 +123,24 @@ const subjectInfos = [
         name: "IA11mn",
         list: [
             {
+                name: "IVP1-IA",
+                type: LessonType.All,
+                lecturer: "Гордієнко Сергій Георгійович",
+                links: [
+                ],
+            },
+            {
                 name: "IVP2-IA",
                 type: LessonType.Lecture,
                 lecturer: "Ромашко Алла Сазонівна",
                 links: [
                     { name: 'Classroom', link: 'https://classroom.google.com/u/1/c/NDQ5MTY0NDM1NDcw' },
-                    { name: 'Google', link: 'http://meet.google.com/szf-dfno-ajt' }
+                    { name: 'Google', link: 'http://meet.google.com/szf-dfno-ajt' },
+                    { name: 'Telegram', link: 'https://t.me/+i0J6URn4Tuw2NWQy' }
                 ],
             },
             {
                 name: "IVP2-IA",
-                viewName: "Інтелектуальна власність та патентознавство-2. Патентознавство та набуття прав",
                 type: LessonType.Practical,
                 lecturer: "Гаврушкевич Наталія Валеріївна",
                 links: [
@@ -140,7 +150,6 @@ const subjectInfos = [
             },
             {
                 name: "SIR-IA",
-                viewName: "Сталий іноваційний розвиток",
                 type: LessonType.All,
                 lecturer: "Бендюг Владислав Іванович",
                 links: [
@@ -163,6 +172,7 @@ const subjectInfos = [
                 type: LessonType.Practical,
                 lecturer: "Дорошенко Анатолій Юхимович",
                 links: [
+                    { name: 'Zoom', link: 'https://us02web.zoom.us/j/87189890809?pwd=ZGxuZEY2S2YyV2FzNlAxTW84TkVPdz09' }
                 ],
             },
             {
@@ -207,7 +217,8 @@ const subjectInfos = [
                 type: LessonType.All,
                 lecturer: "Савенко Володимир Миколайович",
                 links: [
-                    { name: 'Google Meet', link: 'https://meet.google.com/gwr-xvyw-anf?hs=224' }
+                    { name: 'Google Meet', link: 'https://meet.google.com/gwr-xvyw-anf?hs=224' },
+                    { name: 'Google Drive', link: 'https://drive.google.com/drive/folders/1zOMbOazxT5W0CZirSjglFy0V76AWAb9Q' }
                 ],
             },
             {
@@ -215,6 +226,8 @@ const subjectInfos = [
                 type: LessonType.All,
                 lecturer: "Катін Павло Юрійович",
                 links: [
+                    { name: 'Zoom', link: 'https://us04web.zoom.us/j/7477652542?pwd=RTloNGpTbEg2eFVpbVo4Z2Yxd2x5Zz09' },
+                    { name: 'Telegram', link: 'https://t.me/+LOqk3_KQV51jNTI6' }
                 ],
             }
         ]
