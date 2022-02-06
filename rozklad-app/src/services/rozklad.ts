@@ -150,11 +150,32 @@ const subjectSchedule = [
         groupName: "IA11mn",
         pairs: [
             {
+                name: "IVP1-IA",
+                type: LessonType.Lecture,
+                week: Weeks.Second,
+                day: Days.Monday,
+                pair: 4
+            },
+            {
+                name: "IVP1-IA",
+                type: LessonType.Practical,
+                week: Weeks.First,
+                day: Days.Friday,
+                pair: 2
+            },
+            {
                 name: "IVP2-IA",
                 type: LessonType.Lecture,
                 week: Weeks.Both,
                 day: Days.Monday,
                 pair: 3
+            },
+            {
+                name: "IVP2-IA",
+                type: LessonType.Practical,
+                week: Weeks.Second,
+                day: Days.Friday,
+                pair: 1
             },
             {
                 name: "SIR-IA",
@@ -164,32 +185,25 @@ const subjectSchedule = [
                 pair: 4
             },
             {
-                name: "ENG-IA",
-                type: LessonType.Lecture,
-                week: Weeks.Both,
-                day: Days.Monday,
-                pair: 5
-            },
-            {
-                name: "NRMD-IA",
-                type: LessonType.Lecture,
-                week: Weeks.First,
-                day: Days.Friday,
-                pair: 1
-            },
-            {
-                name: "IVP2-IA",
-                type: LessonType.Lecture,
-                week: Weeks.Second,
-                day: Days.Friday,
-                pair: 1
-            },
-            {
                 name: "SIR-IA",
-                type: LessonType.Lecture,
+                type: LessonType.Practical,
                 week: Weeks.Second,
                 day: Days.Friday,
                 pair: 2
+            },
+            {
+                name: "ENG-IA",
+                type: LessonType.Practical,
+                week: Weeks.Both,
+                day: Days.Friday,
+                pair: 3
+            },
+            {
+                name: "NRMD-IA",
+                type: LessonType.Practical,
+                week: Weeks.First,
+                day: Days.Friday,
+                pair: 1
             },
             // Selectable
             {
