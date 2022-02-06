@@ -177,7 +177,7 @@ const subjectInfos = [
             },
             {
                 name: "SMOS",
-                type: LessonType.Lecture,
+                type: LessonType.All,
                 lecturer: "Корнієнко Б. Я.",
                 links: [
                     { name: 'Telegram', link: 'https://t.me/+RNTV09xpZXFlmL-L' },
@@ -186,7 +186,7 @@ const subjectInfos = [
             },
             {
                 name: "NRDB",
-                type: LessonType.Lecture,
+                type: LessonType.All,
                 lecturer: "Ульяницька Ксенія Олександрівна",
                 links: [
                     { name: 'Telegram', link: 'https://t.me/+WQe3dYsx6LQziDN2' },
