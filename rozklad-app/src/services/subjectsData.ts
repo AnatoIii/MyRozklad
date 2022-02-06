@@ -27,6 +27,11 @@ const subjects = [
     },
     // IA group
     {
+        name: "IVP1-IA",
+        viewName: "Інтелектуальна власність та патентознавство-1. Право інтелектуальної власності",
+        isSelectable: false
+    },
+    {
         name: "IVP2-IA",
         viewName: "Інтелектуальна власність та патентознавство-2. Патентознавство та набуття прав",
         isSelectable: false
