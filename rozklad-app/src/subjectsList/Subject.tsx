@@ -44,7 +44,7 @@ const Subject: React.FC<IProps> = ({ subjectData, subjectInfo, type }: IProps) =
                                 <span className={styles.textlink}>{el.link}</span>
                             )
                             : (
-                                <a href={el.link}>{el.name}</a>
+                                <a href={el.link} target="_blank" rel="noreferrer noopener">{el.name}</a>
                             )}
                         </div>
                 ))}

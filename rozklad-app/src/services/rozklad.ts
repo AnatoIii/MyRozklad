@@ -126,9 +126,9 @@ const subjectSchedule = [
             {
                 name: "UBP",
                 type: LessonType.Practical,
-                week: Weeks.Second,
-                day: Days.Tuesday,
-                pair: 6
+                week: Weeks.First,
+                day: Days.Monday,
+                pair: 2
             },
             {
                 name: "PVS",
@@ -143,6 +143,63 @@ const subjectSchedule = [
                 week: Weeks.First,
                 day: Days.Thursday,
                 pair: 4
+            },
+            // Other
+            {
+                name: "KIST",
+                type: LessonType.Lecture,
+                week: Weeks.Both,
+                day: Days.Tuesday,
+                pair: 1
+            },
+            {
+                name: "KIST",
+                type: LessonType.Practical,
+                week: Weeks.Second,
+                day: Days.Monday,
+                pair: 2
+            },
+            {
+                name: "TMN",
+                type: LessonType.Lecture,
+                week: Weeks.Both,
+                day: Days.Tuesday,
+                pair: 1
+            },
+            {
+                name: "TMN",
+                type: LessonType.Practical,
+                week: Weeks.Second,
+                day: Days.Thursday,
+                pair: 1
+            },
+            {
+                name: "MDL",
+                type: LessonType.Lecture,
+                week: Weeks.Both,
+                day: Days.Thursday,
+                pair: 2
+            },
+            {
+                name: "MDL",
+                type: LessonType.Practical,
+                week: Weeks.Second,
+                day: Days.Wednesday,
+                pair: 4
+            },
+            {
+                name: "PCS",
+                type: LessonType.Lecture,
+                week: Weeks.Both,
+                day: Days.Tuesday,
+                pair: 5
+            },
+            {
+                name: "PCS",
+                type: LessonType.Practical,
+                week: Weeks.First,
+                day: Days.Tuesday,
+                pair: 6
             }
         ]
     },
@@ -258,9 +315,9 @@ const subjectSchedule = [
             {
                 name: "UBP",
                 type: LessonType.Practical,
-                week: Weeks.Second,
-                day: Days.Tuesday,
-                pair: 6
+                week: Weeks.First,
+                day: Days.Monday,
+                pair: 2
             },
             {
                 name: "PVS",

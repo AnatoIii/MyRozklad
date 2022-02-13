@@ -77,6 +77,27 @@ const subjects = [
         name: "PVS",
         viewName: "Технології та методика програмування вбудованих систем",
         isSelectable: true
+    },
+    // Other
+    {
+        name: "KIST",
+        viewName: "Корпоративні інформаційні системи та технології",
+        isSelectable: true
+    },
+    {
+        name: "TMN",
+        viewName: "Технології машинного навчання",
+        isSelectable: true
+    },
+    {
+        name: "MDL",
+        viewName: "Методи Deep Learning",
+        isSelectable: true
+    },
+    {
+        name: "PCS",
+        viewName: "Побудова Cloud-систем",
+        isSelectable: true
     }
 ]
 

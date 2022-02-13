@@ -77,7 +77,7 @@ const SubjectsList: React.FC = () => {
                     const scheduleInPair = pairsList.filter(el => el.day === day);
 
                     return (
-                        <div className={`${styles.pair} ${nearestActive(day, pair, Weeks.First) ? styles.active : null}`}>
+                        <div className={`${styles.pair} ${nearestActive(day, pair, week) ? styles.active : null}`}>
                             {scheduleInPair.map(sip => { // Pair object
                                 const subjectInPair = userSubjects.find(el => el.name === sip.name && (el.type === sip.type || el.type === LessonType.All));
                                 const subjectData = subjectsData.find(el => el.name === sip.name);
